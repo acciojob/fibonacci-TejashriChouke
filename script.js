@@ -1,12 +1,17 @@
-function fibonacci(n) {
-// your code here
-	if(n==1) return 0;
-		if(n==5) return 3;
-		let prev = fib(n-1);
-		let prev2 = fib(n-2);
-
-		return prev + prev2;
+function fibonacci(num) {
+  if (num === 0) {
+    return 0;
+  } else if (num === 1) {
+    return 1;
+  } else {
+    let fibArray = [0, 1];
+    for (let i = 2; i <= num; i++) {
+      fibArray.push(fibArray[i - 1] + fibArray[i - 2]);
     }
+    return fibArray[num];
+  }
 }
 
-module.exports = fibonacci;
+// Test cases
+console.log(fibonacci(1)); // Output: 0
+console.log(fibonacci(5)); // Output
